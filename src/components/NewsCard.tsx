@@ -20,10 +20,10 @@ export default function NewsCard({ post, featured = false }: NewsCardProps) {
         return (
             <Link
                 href={`/news/${post.slug || post.id}`}
-                className="group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+                className="group block bg-slate-900 rounded-2xl overflow-hidden shadow-lg shadow-black/20 hover:shadow-cyan-500/10 transition-all duration-300 border border-white/10"
             >
                 {/* Image placeholder */}
-                <div className="relative h-64 bg-gradient-to-br from-blue-700 to-slate-900 overflow-hidden">
+                <div className="relative h-64 bg-slate-800 overflow-hidden">
                     {post.thumbnail_url ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img
@@ -35,13 +35,13 @@ export default function NewsCard({ post, featured = false }: NewsCardProps) {
                         <>
                             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="text-white/50 text-6xl font-bold">H</span>
+                                <span className="text-white/20 text-6xl font-bold">H</span>
                             </div>
                         </>
                     )}
                     {post.is_featured && (
                         <div className="absolute top-4 left-4">
-                            <span className="bg-yellow-500 text-slate-900 text-xs font-semibold px-3 py-1 rounded-full">
+                            <span className="bg-yellow-500 text-slate-900 text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
                                 Featured
                             </span>
                         </div>
@@ -49,20 +49,20 @@ export default function NewsCard({ post, featured = false }: NewsCardProps) {
                 </div>
 
                 <div className="p-6">
-                    <div className="flex items-center gap-2 text-gray-500 text-sm mb-3">
+                    <div className="flex items-center gap-2 text-slate-400 text-sm mb-3">
                         <Calendar size={14} />
                         <span>{formatDate(post.published_at)}</span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors line-clamp-2">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors line-clamp-2">
                         {post.title}
                     </h3>
 
-                    <p className="text-gray-600 line-clamp-3 mb-4">
+                    <p className="text-slate-400 line-clamp-3 mb-4">
                         {post.excerpt || post.content.substring(0, 150)}...
                     </p>
 
-                    <div className="flex items-center gap-2 text-blue-600 font-medium">
+                    <div className="flex items-center gap-2 text-cyan-400 font-medium">
                         <span>Baca selengkapnya</span>
                         <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -74,10 +74,10 @@ export default function NewsCard({ post, featured = false }: NewsCardProps) {
     return (
         <Link
             href={`/news/${post.slug || post.id}`}
-            className="group block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+            className="group block bg-slate-900 rounded-xl overflow-hidden shadow-lg shadow-black/20 hover:shadow-cyan-500/10 transition-all duration-300 border border-white/10"
         >
             {/* Image placeholder */}
-            <div className="relative h-48 bg-gradient-to-br from-gray-600 to-gray-700 overflow-hidden">
+            <div className="relative h-48 bg-slate-800 overflow-hidden">
                 {post.thumbnail_url ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
@@ -89,23 +89,23 @@ export default function NewsCard({ post, featured = false }: NewsCardProps) {
                     <>
                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <span className="text-white/30 text-4xl font-bold">H</span>
+                            <span className="text-white/10 text-4xl font-bold">H</span>
                         </div>
                     </>
                 )}
             </div>
 
             <div className="p-5">
-                <div className="flex items-center gap-2 text-gray-500 text-xs mb-2">
+                <div className="flex items-center gap-2 text-slate-400 text-xs mb-2">
                     <Calendar size={12} />
                     <span>{formatDate(post.published_at)}</span>
                 </div>
 
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors line-clamp-2">
+                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">
                     {post.title}
                 </h3>
 
-                <p className="text-gray-600 text-sm line-clamp-2">
+                <p className="text-slate-400 text-sm line-clamp-2">
                     {post.excerpt || post.content.substring(0, 100)}...
                 </p>
             </div>

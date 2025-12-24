@@ -56,7 +56,7 @@ function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: strin
     }, [value, hasAnimated]);
 
     return (
-        <div ref={ref} className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-800">
+        <div ref={ref} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             {count.toLocaleString()}{suffix}
         </div>
     );
@@ -64,20 +64,20 @@ function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: strin
 
 export default function StatisticsSection() {
     return (
-        <section className="py-16 md:py-20 bg-white relative overflow-hidden">
+        <section className="py-16 md:py-20 relative overflow-hidden">
             {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl -z-10" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-50 rounded-full blur-2xl -z-10" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -z-10" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/10 rounded-full blur-2xl -z-10" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                     {stats.map((stat) => (
                         <div key={stat.label} className="text-center group">
-                            <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 group-hover:bg-blue-200 rounded-2xl flex items-center justify-center transition-colors">
-                                <stat.icon className="w-8 h-8 text-blue-700" />
+                            <div className="w-16 h-16 mx-auto mb-4 bg-white/5 border border-white/10 group-hover:bg-blue-500/20 rounded-2xl flex items-center justify-center transition-all duration-300 backdrop-blur-sm">
+                                <stat.icon className="w-8 h-8 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
                             </div>
                             <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                            <div className="text-gray-600 mt-2">{stat.label}</div>
+                            <div className="text-slate-400 mt-2 font-medium">{stat.label}</div>
                         </div>
                     ))}
                 </div>

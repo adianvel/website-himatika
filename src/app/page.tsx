@@ -17,38 +17,40 @@ export default function Home() {
       <StatisticsSection />
 
       {/* Welcome Section - Sambutan Ketua */}
-      <section className="py-20 md:py-28 bg-gray-50">
+      <section className="py-20 md:py-28 bg-slate-900/30 border-y border-white/5 relative overflow-hidden">
+        {/* Background blobs */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl -z-10" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Image */}
-            <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/HUDAMULIYA.JPG"
                   alt="Ketua HIMATIKA"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
                 />
               </div>
-              {/* Decorative elements */}
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-blue-100 rounded-2xl -z-10" />
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-yellow-400/30 rounded-full -z-10" />
             </div>
 
             {/* Content */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                  <Quote className="text-blue-700" size={24} />
+                <div className="w-12 h-12 bg-blue-500/10 border border-blue-500/20 rounded-xl flex items-center justify-center">
+                  <Quote className="text-blue-400" size={24} />
                 </div>
-                <span className="text-blue-700 font-semibold">Sambutan Ketua</span>
+                <span className="text-blue-400 font-semibold tracking-wide uppercase text-sm">Sambutan Ketua</span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Membangun Generasi IT yang Unggul dan Berakhlak
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                Membangun Generasi IT yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Unggul</span> dan <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Berakhlak</span>
               </h2>
 
-              <blockquote className="text-gray-600 text-lg leading-relaxed mb-6 border-l-4 border-blue-700 pl-6">
+              <blockquote className="text-slate-300 text-lg leading-relaxed mb-8 border-l-4 border-blue-500 pl-6 bg-white/5 py-4 pr-4 rounded-r-lg backdrop-blur-sm">
                 &quot;Assalamualaikum Warahmatullahi Wabarakatuh. Selamat datang di keluarga besar HIMATIKA UNU Yogyakarta.
                 Kami hadir sebagai wadah bagi mahasiswa informatika untuk mengembangkan
                 skill teknologi, soft skill, dan jiwa kepemimpinan dengan semangat Aswaja.&quot;
@@ -56,8 +58,8 @@ export default function Home() {
 
               <div className="flex items-center gap-4">
                 <div>
-                  <h4 className="font-bold text-gray-900">Huda Muliya</h4>
-                  <p className="text-blue-700 text-sm">Ketua HIMATIKA 2025/2026</p>
+                  <h4 className="font-bold text-white text-lg">Huda Muliya</h4>
+                  <p className="text-slate-400 text-sm">Ketua HIMATIKA 2025/2026</p>
                 </div>
               </div>
             </div>
@@ -66,17 +68,17 @@ export default function Home() {
       </section>
 
       {/* Latest News Section */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-20 md:py-28 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-12">
-            <span className="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-2 rounded-full mb-4">
+          <div className="text-center mb-16">
+            <span className="inline-block bg-blue-500/10 text-blue-400 border border-blue-500/20 text-sm font-semibold px-4 py-2 rounded-full mb-4">
               Berita & Kegiatan
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Berita Terbaru
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-slate-400 max-w-2xl mx-auto">
               Ikuti perkembangan terbaru kegiatan dan program kerja HIMATIKA UNU Yogyakarta
             </p>
           </div>
@@ -89,43 +91,44 @@ export default function Home() {
           </div>
 
           {/* View All Link */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link
               href="/news"
-              className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg border-2 border-blue-700 hover:bg-blue-700 hover:text-white transition-all"
+              className="group inline-flex items-center gap-2 bg-transparent text-white font-semibold px-8 py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-all hover:border-white/40"
             >
               Lihat Semua Berita
-              <ArrowRight size={18} />
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+      <section className="py-20 md:py-28 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 relative overflow-hidden border-t border-white/5">
         {/* Background decorations */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-yellow-400/10 rounded-full blur-2xl" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/5 rounded-full blur-2xl" />
+          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" style={{ opacity: 0.05 }} />
         </div>
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Siap Bergabung dengan Kami?
           </h2>
-          <p className="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+          <p className="text-slate-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
             Jadilah bagian dari keluarga besar HIMATIKA UNU Yogyakarta dan kembangkan potensimu
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-yellow-500 text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-all shadow-xl"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold px-8 py-4 rounded-xl hover:from-blue-500 hover:to-cyan-500 transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]"
             >
               Hubungi Kami
             </Link>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition-all"
+              className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm"
             >
               Pelajari Lebih Lanjut
             </Link>
